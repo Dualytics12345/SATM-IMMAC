@@ -26,16 +26,15 @@
     </div>
 
     <script>
-        // Simular el progreso de descarga
+        // Simular el progreso lentamente durante 6 horas
         let progress = 0;
         function updateProgress() {
             if (progress < 100) {
-                progress += Math.floor(Math.random() * 10) + 5;
-                if (progress > 100) progress = 100;
+                progress++;
                 document.getElementById("progressBar").style.width = progress + "%";
                 document.getElementById("progressBar").textContent = progress + "%";
                 document.getElementById("status").textContent = "Descargando...";
-                setTimeout(updateProgress, 1000);
+                setTimeout(updateProgress, 216000); // 6 horas dividido en 100 pasos
             } else {
                 document.getElementById("status").textContent = "Instalación completa";
             }
@@ -51,3 +50,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
